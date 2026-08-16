@@ -1,6 +1,7 @@
 /.venv
 dockerNotes.txt
 NoteFile.txt
+TestServer.txt
 ProjectDocs.txt
 node_modules/
 .env
