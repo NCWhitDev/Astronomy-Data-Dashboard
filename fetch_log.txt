@@ -1,0 +1,5 @@
+id              SERIAL PRIMARY KEY
+fetched_at      TIMESTAMP
+rows_fetched    INTEGER
+status          VARCHAR       -- "success" / "failed"
+error_message   VARCHAR       -- nullable

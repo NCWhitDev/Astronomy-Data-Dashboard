@@ -1,0 +1,11 @@
+id              SERIAL PRIMARY KEY
+pl_name         VARCHAR       -- planet name
+hostname        VARCHAR       -- host star name
+discovery_year  INTEGER
+discovery_method VARCHAR      -- e.g. "Transit", "Radial Velocity"
+orbital_period  FLOAT         -- days
+planet_radius   FLOAT         -- Earth radii
+planet_mass     FLOAT         -- Earth masses, nullable (often missing)
+distance_ly     FLOAT         -- light years from Earth
+star_temp       FLOAT         -- host star temperature, nullable
+last_updated    TIMESTAMP     -- when your pipeline last refreshed this row
