@@ -13,6 +13,10 @@ export function fetchExoplanets(params = {}) {
   return request(`/api/exoplanets${query ? `?${query}` : ""}`);
 }
 
+export function fetchExoplanetSample(limit = 300) {
+  return request(`/api/exoplanets/sample?limit=${limit}`);
+}
+
 export function fetchDiscoveriesByYear() {
   return request("/api/stats/discoveries-by-year");
 }

@@ -11,7 +11,7 @@ const pool = require("../db");
 router.get("/discoveries-by-year", async (req, res) => {
   try {
     const result = await pool.query(`
-      SELECT discovery_year, COUNT(*) AS count
+      SELECT discovery_year, COUNT(*)::int AS count
       FROM exoplanets
       WHERE discovery_year IS NOT NULL
       GROUP BY discovery_year
@@ -33,7 +33,7 @@ router.get("/discoveries-by-year", async (req, res) => {
 router.get("/discovery-methods", async (req, res) => {
   try {
     const result = await pool.query(`
-      SELECT discovery_method, COUNT(*) AS count
+      SELECT discovery_method, COUNT(*)::int AS count
       FROM exoplanets
       WHERE discovery_method IS NOT NULL
       GROUP BY discovery_method

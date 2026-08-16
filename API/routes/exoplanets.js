@@ -39,7 +39,7 @@ router.get("/", async (req, res) => {
 
     const conditions = [];
     const values = [];
-    
+
     if (req.query.minRadius !== undefined) {
       values.push(req.query.minRadius);
       conditions.push(`planet_radius >= $${values.length}`);
@@ -108,6 +108,42 @@ router.get("/", async (req, res) => {
   } catch (err) {
     console.error("Error fetching exoplanets:", err);
     res.status(500).json({ error: "Failed to fetch exoplanets" });
+  }
+});
+
+/**
+ * GET /api/exoplanets/sample
+ * Random sample of planets across the whole table — used by the
+ * star map, which needs points spread across the full range of
+ * years/distances rather than just the most recent page.
+ *
+ * Query params:
+ *   limit   default 300, max 1000
+ *
+ * NOTE: this route is defined before /:id so Express doesn't try to
+ * match "sample" as a numeric id.
+ */
+router.get("/sample", async (req, res) => {
+  try {
+    const limit = Math.min(parseInt(req.query.limit) || 300, 1000);
+
+    const result = await pool.query(
+      `
+      SELECT id, pl_name, hostname, discovery_year, discovery_method,
+             orbital_period, planet_radius, planet_mass, distance_ly,
+             star_temp
+      FROM exoplanets
+      WHERE discovery_year IS NOT NULL AND distance_ly IS NOT NULL
+      ORDER BY RANDOM()
+      LIMIT $1
+      `,
+      [limit]
+    );
+
+    res.json(result.rows);
+  } catch (err) {
+    console.error("Error fetching exoplanet sample:", err);
+    res.status(500).json({ error: "Failed to fetch sample" });
   }
 });
 

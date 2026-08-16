@@ -3,7 +3,7 @@ import "./App.css";
 import StarMap from "./components/StarMap.jsx";
 import { DiscoveriesByYearChart, DiscoveryMethodsChart } from "./components/StatsCharts.jsx";
 import PlanetTable from "./components/PlanetTable.jsx";
-import { fetchExoplanets, fetchDiscoveriesByYear, fetchDiscoveryMethods } from "./Api.js";
+import { fetchExoplanets, fetchExoplanetSample, fetchDiscoveriesByYear, fetchDiscoveryMethods } from "./Api.js";
 
 export default function App() {
   // Data for the star map + method filter dropdown — a broad sample,
@@ -32,11 +32,11 @@ export default function App() {
     async function loadOnce() {
       try {
         const [mapData, yearStats, methodStats] = await Promise.all([
-          fetchExoplanets({ pageSize: 100, sortBy: "discovery_year", order: "desc" }),
+          fetchExoplanetSample(400),
           fetchDiscoveriesByYear(),
           fetchDiscoveryMethods(),
         ]);
-        setMapPlanets(mapData.data);
+        setMapPlanets(mapData);
         setByYear(yearStats);
         setByMethod(methodStats);
         setMethods(methodStats.map((m) => m.discovery_method));
