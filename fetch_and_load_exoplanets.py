@@ -19,7 +19,6 @@ Schema expected (see README / schema.sql):
     fetch_log(id, fetched_at, rows_fetched, status, error_message)
 """
 
-from curses import raw
 import os
 import sys
 import logging
@@ -83,7 +82,7 @@ def clean_row(raw):
     Normalize a single raw API row into the tuple shape our DB expects.
     Missing/None values are passed through as NULL rather than guessed.
     """
-    return {
+    return (
         raw.get("pl_name"),
         raw.get("hostname"),
         raw.get("disc_year"),
@@ -94,7 +93,7 @@ def clean_row(raw):
         raw.get("sy_dist"),
         raw.get("st_teff"),
         datetime.now(timezone.utc),
-    }
+    )
 
 
 def upsert_exoplanets(conn, rows):
