@@ -3,7 +3,7 @@ import "./App.css";
 import StarMap from "./components/StarMap.jsx";
 import { DiscoveriesByYearChart, DiscoveryMethodsChart } from "./components/StatsCharts.jsx";
 import PlanetTable from "./components/PlanetTable.jsx";
-import { fetchExoplanets, fetchExoplanetSample, fetchDiscoveriesByYear, fetchDiscoveryMethods } from "./Api.js";
+import { fetchExoplanets, fetchExoplanetSample, fetchDiscoveriesByYear, fetchDiscoveryMethods } from "./api.js";
 
 export default function App() {
   // Data for the star map + method filter dropdown — a broad sample,
@@ -156,11 +156,14 @@ export default function App() {
       </section>
 
       <footer className="footer">
-        Data sourced from the{" "}
-        <a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank" rel="noreferrer">
-          NASA Exoplanet Archive
-        </a>
-        .
+        <div>
+          Data sourced from the{" "}
+          <a href="https://exoplanetarchive.ipac.caltech.edu/" target="_blank" rel="noreferrer">
+            NASA Exoplanet Archive
+          </a>
+          .
+        </div>
+        <div className="footer-credit">Developed by N. Connor Whitaker</div>
       </footer>
     </div>
   );

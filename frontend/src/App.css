@@ -362,6 +362,16 @@
   font-size: 13px;
   padding-top: 24px;
   border-top: 1px solid var(--panel-border);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-credit {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
 }
 
 /* ---------- Responsive ---------- */
