@@ -1,3 +1,9 @@
 /.venv
 dockerNotes.txt
 NoteFile.txt
+ProjectDocs.txt
+// Source - https://stackoverflow.com/a/14981758
+// Posted by functionoid, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-08-15, License - CC BY-SA 3.0
+
+/node_modules/*/node-modules/ 
