@@ -4,4 +4,5 @@ NoteFile.txt
 TestServer.txt
 ProjectDocs.txt
 node_modules/
+Notes/
 .env
