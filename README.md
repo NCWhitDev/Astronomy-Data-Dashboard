@@ -1,3 +1,5 @@
+Source: https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html
+
 # Exoplanet Atlas
 
 A full-stack dashboard that ingests live exoplanet data from NASA's public Exoplanet Archive, stores it in PostgreSQL, and serves it through a custom REST API to an interactive React frontend — including a custom-built star map visualization of every confirmed planet's discovery year, distance from Earth, and radius.
