@@ -2,7 +2,7 @@ Source: https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html
 
 # Exoplanet Atlas
 
-A full-stack dashboard that ingests live exoplanet data from NASA's public Exoplanet Archive, stores it in PostgreSQL, and serves it through a custom REST API to an interactive React frontend — including a custom-built star map visualization of every confirmed planet's discovery year, distance from Earth, and radius.
+A full-stack dashboard that ingests live exoplanet data from NASA's public Exoplanet Archive, stores it in PostgreSQL, and serves it through a custom REST API to an interactive React frontend including a custom-built star map visualization of every confirmed planet's discovery year, distance from Earth, and radius.
 
 **Live data. Real astronomy. Built from scratch.**
 
@@ -10,7 +10,7 @@ A full-stack dashboard that ingests live exoplanet data from NASA's public Exopl
 
 ## Overview
 
-Exoplanet Atlas pulls data from [NASA's Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/), normalizes and stores it in PostgreSQL, and exposes it through a REST API with filtering, sorting, and pagination. The React frontend visualizes the full dataset — 6,000+ confirmed exoplanets — through a custom scatter-plot "star map," aggregate statistics charts, and a searchable, sortable catalog table.
+Exoplanet Atlas pulls data from [NASA's Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/), normalizes and stores it in PostgreSQL, and exposes it through a REST API with filtering, sorting, and pagination. The React frontend visualizes the full dataset 6,000+ confirmed exoplanets through a custom scatter-plot "star map," aggregate statistics charts, and a searchable, sortable catalog table.
 
 The design is themed around a real observatory convention: astronomers use dim red light at night to protect their eyes' dark adaptation, which is where the dashboard's accent color comes from.
 
