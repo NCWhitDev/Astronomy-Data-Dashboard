@@ -59,8 +59,8 @@ Python ingestion script  ──►  PostgreSQL (Docker)
 
 ```bash
 docker run --name exoplanet-db \
-  -e POSTGRES_USER=devuser \
-  -e POSTGRES_PASSWORD=devpass \
+  -e POSTGRES_USER=<your_db_user> \
+  -e POSTGRES_PASSWORD=<your_db_pass \
   -e POSTGRES_DB=exoplanets \
   -p 5432:5432 \
   -d postgres
